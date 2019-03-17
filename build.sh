@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t afdaniele/rpi-duckiebot-dashboard:latest ./
+docker build -t duckietown/rpi-duckiebot-dashboard:master18 ./
