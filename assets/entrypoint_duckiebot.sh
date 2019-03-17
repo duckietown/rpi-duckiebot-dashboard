@@ -21,7 +21,7 @@ python /var/www/html/configure.py \
   --navbar_title $HOSTNAME \
   --website_name "AIDO Duckiebot Dashboard" \
   --login_enabled 0 \
-  --cache_enabled 0 \
+  --cache_enabled 1 \
   --logo_white http://$HOSTNAME.local/data/aido/images/AIDO_logo_negative_navbar.svg \
   --logo_black http://$HOSTNAME.local/data/aido/images/AIDO_logo_positive.svg
 
