@@ -17,7 +17,7 @@ git -C $COMPOSE_PACKAGES_DIR/aido_duckiebot pull origin master || git clone --de
 
 # configure \compose\
 python /var/www/html/configure.py \
-  --guest_default_page monitor \
+  --guest_default_page mission-control \
   --navbar_title $HOSTNAME \
   --website_name "AIDO Duckiebot Dashboard" \
   --login_enabled 0 \
