@@ -1,4 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+set -e
+
+# YOUR CODE BELOW THIS LINE
+# ----------------------------------------------------------------------------
 
 # constants
 HOSTNAME=$(hostname)
@@ -9,5 +14,8 @@ python3 $COMPOSE_DIR/configure.py \
   --logo_white "http://${HOSTNAME}.local/data/duckietown/images/logo.png" \
   --logo_black "http://${HOSTNAME}.local/data/duckietown/images/logo.png"
 
+# ----------------------------------------------------------------------------
+# YOUR CODE ABOVE THIS LINE
+
 # run base entrypoint
-/root/entrypoint.sh
+/entrypoint.sh

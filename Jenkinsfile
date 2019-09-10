@@ -1,35 +1,40 @@
 pipeline {
   agent any
-  environment {
-    // Tag: latest
-    BASE_IMAGE = "afdaniele/compose-arm32v7:latest"
-    BUILD_IMAGE = "duckietown/dt-duckiebot-dashboard:daffy"
-  }
   stages {
-    stage('Update Base Image') {
+    stage('Prepare') {
       steps {
-        sh 'docker pull $BASE_IMAGE'
+        sh 'pip3 install --upgrade duckietown-shell'
+        sh 'dts update'
+    	  sh 'dts install devel'
       }
     }
-    stage('Build Image') {
+    stage('Pre-Clean') {
       steps {
-        sh 'docker build -t $BUILD_IMAGE --no-cache ./'
+        sh 'dts devel clean'
       }
     }
-    stage('Push Image') {
+    stage('Build') {
+      steps {
+        sh 'dts devel build --no-multiarch'
+      }
+    }
+    stage('Push') {
       steps {
         withDockerRegistry(credentialsId: 'DockerHub', url: 'https://index.docker.io/v1/') {
-          sh 'docker push $BUILD_IMAGE'
+          sh 'dts devel push'
         }
       }
     }
-    stage('Clean up') {
+    stage('Post-Clean') {
       steps {
-        sh 'docker rmi $BASE_IMAGE || :'
-        sh 'docker rmi $BUILD_IMAGE || :'
-
-        cleanWs()
+        sh 'dts devel clean'
       }
     }
+  }
+  post {
+      always {
+          sh 'dts devel clean'
+          cleanWs()
+      }
   }
 }
