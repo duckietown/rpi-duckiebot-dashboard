@@ -3,7 +3,7 @@ pipeline {
   environment {
     // Tag: latest
     BASE_IMAGE = "afdaniele/compose-arm32v7:latest"
-    BUILD_IMAGE = "duckietown/rpi-duckiebot-dashboard:master19"
+    BUILD_IMAGE = "duckietown/dt-duckiebot-dashboard:daffy""
   }
   stages {
     stage('Update Base Image') {

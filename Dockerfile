@@ -19,7 +19,7 @@ RUN python3 $COMPOSE_DIR/configure.py \
 RUN [ "cross-build-end" ]
 
 # install ENTRYPOINT script
-ADD assets/entrypoint_duckiebot.sh /root/entrypoint_duckiebot.sh
+ADD assets/entrypoint.sh /entrypoint.sh
 
 # configure ENTRYPOINT
-ENTRYPOINT ["/root/entrypoint_duckiebot.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
