@@ -9,6 +9,7 @@ set -e
 HOSTNAME=$(hostname)
 
 # configure \compose\
+echo "Configuring \\compose\\ ..."
 python3 $COMPOSE_DIR/configure.py \
   --navbar_title "${HOSTNAME}" \
   --logo_white "http://${HOSTNAME}.local/data/duckietown/images/logo.png" \
