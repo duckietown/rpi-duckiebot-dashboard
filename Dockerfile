@@ -5,8 +5,8 @@ ARG DASHBOARD_NAME="duckiebot"
 # ==> Do not change this code
 ARG ARCH=arm32v7
 ARG MAJOR=latest
-ARG BASE_TAG=${MAJOR}
-ARG BASE_IMAGE=compose-${ARCH}
+ARG BASE_IMAGE=compose
+ARG BASE_TAG=${MAJOR}-${ARCH}
 
 # define base image
 FROM afdaniele/${BASE_IMAGE}:${BASE_TAG}
