@@ -10,4 +10,4 @@ python3 $COMPOSE_DIR/configure.py \
   --logo_black "http://${HOSTNAME}.local/data/duckietown/images/logo.png"
 
 # run base entrypoint
-/root/entrypoint.sh
+/entrypoint.sh
