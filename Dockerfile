@@ -1,5 +1,5 @@
 # Base image
-FROM afdaniele/compose-arm32v7:latest
+FROM afdaniele/compose:latest-arm32v7
 
 # enable ARM
 RUN [ "cross-build-start" ]
