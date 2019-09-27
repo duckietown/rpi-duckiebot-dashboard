@@ -2,7 +2,7 @@ pipeline {
   agent any
   environment {
     // Tag: latest
-    BASE_IMAGE = "afdaniele/compose-arm32v7:latest"
+    BASE_IMAGE = "afdaniele/compose:latest-arm32v7"
     BUILD_IMAGE = "duckietown/rpi-duckiebot-dashboard:master19"
   }
   stages {
