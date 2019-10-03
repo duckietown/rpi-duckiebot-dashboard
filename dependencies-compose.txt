@@ -1,2 +1,2 @@
 # LIST YOUR COMPOSE PACKAGES HERE
-duckietown_duckiebot
+duckietown_duckiebot=v0.2.4
