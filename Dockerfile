@@ -11,6 +11,10 @@ ARG BASE_TAG=${MAJOR}-${ARCH}
 # define base image
 FROM afdaniele/${BASE_IMAGE}:${BASE_TAG}
 
+# setup environment
+ARG DT_DASHBOARD_NAME
+ENV DT_DASHBOARD_NAME="${DASHBOARD_NAME}"
+
 # copy dependencies files only
 COPY ./dependencies-apt.txt /tmp/
 
